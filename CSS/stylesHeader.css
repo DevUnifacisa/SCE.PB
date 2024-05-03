@@ -1,0 +1,38 @@
+header {
+  position: relative; /* Estabelece um contexto de posicionamento para os elementos filhos absolutamente posicionados */
+  display: flex; /* Adiciona flexbox para o layout */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: space-between; /* Distribui o espaço entre os elementos, mantendo o primeiro e o último à margem */
+  padding: 0 20px; /* Adiciona um preenchimento interno igual à margem desejada nos lados */
+}
+
+header img:first-child {
+  width: 20%; /* Define a largura da imagem */
+  max-height: 450px; /* Defina a altura máxima desejada para a primeira imagem */
+}
+
+.navbar {
+  color: #105b63;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-list li {
+  margin-right: 20px;
+}
+
+.nav-list li a {
+  color: #105b63;
+  text-decoration: none; /* Corrigido de "blanchedalmond" */
+}
+
+nav a:hover {
+  background-color: #0b3b48;
+  color: white;
+}

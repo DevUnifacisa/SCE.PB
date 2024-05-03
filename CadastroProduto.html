@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>SCE.PB</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- <link rel="stylesheet" href="css/styles.css" type="text/css" />-->
+    <link rel="stylesheet" href="css/stylesFooter.css" type="text/css"/>
+    <link rel="stylesheet" href="css/stylesFormEntProdutos.css" type="text/css" />
+    <link rel="stylesheet" href="css/stylesCard.css" type="text/css" />
+    <!--<link rel="stylesheet" href="css/stylesContato.css" type="text/css" />-->
+    <link rel="stylesheet" href="css/stylesFormCadProdutos.css" type="text/css" />
+    <link rel="stylesheet" href="css/stylesFormSaidaProdutos.css" type="text/css" />
+    <link rel="stylesheet" href="css/stylesHeader.css" type="text/css" />
+    <link rel="stylesheet" href="css/stylesResponsiv.css" type="text/css" />
+    <link rel="icon" href="icon/Icon_Logo1.ico" type="image/ico" />
+  </head>
+  <body>
+    <header>
+      <img src="icon/logo3-removebg-preview.png" alt="Logo Topo" width="10%" />
+      <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#">Cadastrar</a></li>
+        <li><a href="EntradaProduto.html">Entrada </a></li>
+        <li><a href="SaidaProduto.html">Saida</a></li>
+        <li><a href="HistoricoProduto.html">Histórico</a></li>
+        <li><a href="Inventario.html">Inventario</a></li>
+        <li><a href="Suporte.html">Suporte</a></li>
+        <li><a href="login.html">Sair</a></li>
+      </ul>
+    </header>
+  </nav>
+    <h1>Cadastro de Produtos</h1>
+    <form id="cadastro-produto">
+         <div class="form-row">
+        <label for="nome-produto">Descrição Produto:</label>
+        <input type="text" id="nome-produto" name="nome-produto" required>
+      </div>
+      <div class="form-row">
+        <div style="flex: 1;">
+          <label for="valor">Valor R$:</label>
+          <input type="number" id="valor" name="valor" step="0.01" required>
+        </div>
+        <div style="flex: 1;">
+          <label for="quantidade">Quantidade Cadastrada:</label>
+          <input type="number" id="quantidade" name="quantidade" required>
+        </div>
+        <div style="flex: 1;">
+          <label for="tipo-embalagem">Embalagem (Cx./Pct./Und.):</label>
+          <input type="text" id="tipo-embalagem" name="tipo-embalagem" required>
+        </div>
+      </div>
+      <button type="submit">Confirmar Cadastro</button>
+      <button type="button" onclick="limparCampos()">Limpar Campos</button>
+    </form>
+  
+    <script>
+      function limparCampos() {
+        document.getElementById("cadastro-produto").reset();
+      }
+    </script>
+      
+      <a id="link-topo" href="#">&#9650;</a>
+    </div>
+          </main>
+      <script src="script.js"></script>
+    </body>
+</html>
