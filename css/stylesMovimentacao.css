@@ -1,0 +1,77 @@
+#movimentacoes {
+  border: 2px solid #ccc;
+  padding: 20px;
+  max-width: 600px;
+  /* Defini uma largura máxima */
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form-container {
+  background-color: #fff;
+  padding: 20px;
+  /* Reduzi o padding para economizar espaço */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  /* Defini uma largura máxima */
+  margin: 20px auto;
+  /* Reduzi a margem para evitar que o formulário pareça muito distante */
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 5px;
+  width: 120px;
+}
+
+input[type="text"],
+input[list] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 25px;
+  background-color: #000033;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#movimentacoes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#movimentacoes th,
+#movimentacoes td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#estoque-atualizado {
+  text-align: center;
+  margin-top: 20px;
+}

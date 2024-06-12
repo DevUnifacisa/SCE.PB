@@ -1,0 +1,62 @@
+/* Estilização para a tabela de produtos */
+#produtos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#produtos-table th,
+#produtos-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#produtos-table th {
+  background-color: #f2f2f2;
+}
+
+#produtos-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Estilização específica para o código do produto */
+#produtos-table th:first-child,
+#produtos-table td:first-child {
+  width: 20%;
+  /* Reduzido para adaptar melhor em telas menores */
+  white-space: nowrap;
+}
+
+/* Estilização para os botões de ação */
+#produtos-table button {
+  padding: 5px 8px;
+  /* Reduzido o padding para tornar os botões mais compactos */
+  cursor: pointer;
+  background-color: #000033;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Estilização para os produtos na tabela */
+#produtos-lista td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#produtos-lista tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Estilização para os botões de ação */
+#produtos-lista button {
+  padding: 5px 8px;
+  /* Reduzido o padding para tornar os botões mais compactos */
+  cursor: pointer;
+  background-color: #000033;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}

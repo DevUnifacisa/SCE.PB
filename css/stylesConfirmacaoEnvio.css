@@ -1,0 +1,126 @@
+/* Estilos do cabeçalho */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo-image {
+  width: 10%;
+}
+
+/* Estilos do formulário */
+form {
+  border: 2px solid #ccc;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  font-weight: normal;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+#mensagem-enviada {
+  text-align: center;
+  text-decoration: wavy;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  text-align: center;
+  margin-top: 20px;
+  padding: 14px 25px;
+  background-color: #000033;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .logo-image {
+    width: 20%;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: calc(100% - 20px);
+  }
+
+  button {
+    padding: 12px 20px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px;
+  }
+
+  .logo-image {
+    width: 30%;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: calc(100% - 20px);
+  }
+
+  button {
+    padding: 10px 15px;
+    margin-top: 10px;
+  }
+}

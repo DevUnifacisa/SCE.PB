@@ -1,0 +1,40 @@
+/* Estilização para a tabela de produtos */
+#tabela-estoque {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#tabela-estoque th,
+#tabela-estoque td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#tabela-estoque th {
+  background-color: #f2f2f2;
+}
+
+#tabela-estoque tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Estilização específica para o código do produto */
+#tabela-estoque th:first-child,
+#tabela-estoque td:first-child {
+  width: 20%;
+  /* Reduzido para adaptar melhor em telas menores */
+  white-space: nowrap;
+}
+
+/* Estilização para os botões de ação */
+#tabela-estoque button {
+  padding: 5px 8px;
+  /* Reduzido o padding para tornar os botões mais compactos */
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}

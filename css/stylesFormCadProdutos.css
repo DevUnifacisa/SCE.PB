@@ -1,0 +1,91 @@
+#cadastro-produto {
+  border: 2px solid #ccc;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  width: 100%;
+  font-weight: normal;
+  text-align: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 25px;
+  background-color: #000033;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="button"] {
+  background-color: #000033;
+}
+
+h1 {
+  text-align: center;
+}
+
+.produto-linha {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.produto-item {
+  flex: 1 1 45%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #cadastro-produto {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .produto-item {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #cadastro-produto {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>SCE.PB - Cadastro de Produtos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/stylesFormCadProdutos.css" type="text/css" />
+  <link rel="stylesheet" href="../css/stylesGeral.css" type="text/css" />
+  <link rel="icon" href="../icon/Icon_Logo1.ico" type="image/ico" />
+</head>
+
+<body>
+  <header>
+    <img src="../icon/logo3-removebg-preview.png" alt="Logo Topo" width="10%" />
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li>
+          <a href="#">Cadastro</a>
+          <ul class="submenu">
+            <li><a href="#">Produtos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Estoque</a>
+          <ul class="submenu">
+            <li><a href="entradaProdutos.html">Entrada</a></li>
+            <li><a href="saidaProdutos.html">Saída</a></li>
+            <li><a href="inventario.html">Ajustes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Relatórios</a>
+          <ul class="submenu">
+            <li>
+              <a href="realtorioEntradasGeral.html">Entradas</a>
+            </li>
+            <li>
+              <a href="realtorioSaidasGeral.html">Saídas</a>
+            </li>
+            <li>
+              <a href="relatorioPosicaoGeralEstoque.html">Estoque</a>
+            </li>
+            <li><a href="movimentacao.html">Movimentação</a></li>
+            <li><a href="produtosCadastrados.html">Prod.Cadastrados</a></li>
+          </ul>
+        </li>
+        <li><a href="suporte.html">Suporte</a></li>
+        <li><a href="../index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Cadastro de Produtos</h1>
+  <form id="cadastro-produto">
+    <div class="form-row">
+      <label for="codigo-produto">Código Produto:</label>
+      <input type="text" id="codigo-produto" name="codigo-produto" required>
+    </div>
+    <div class="form-row">
+      <label for="nome-produto">Descrição Produto:</label>
+      <input type="text" id="nome-produto" name="nome-produto" required>
+    </div>
+    <div class="form-row">
+      <div style="flex: 1;">
+        <label for="valor">Valor R$:</label>
+        <input type="number" id="valor" name="valor" step="0.01" required>
+      </div>
+      <div style="flex: 1;">
+        <label for="tipo-embalagem">Embalagem (Cx./Pct./Und.):</label>
+        <input type="text" id="tipo-embalagem" name="tipo-embalagem" required>
+      </div>
+    </div>
+    <button type="submit">Cadastrar</button>
+    <button type="button" onclick="window.location.href='produtosCadastrados.html'">Mostrar Produtos</button>
+  </form>
+  <a id="link-topo" href="#">&#9650;</a>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-text">
+        <dl>
+          <dd>&copy; 2024 - Todos os direitos reservados</dd>
+          <dd>Entre em contato pelo e-mail: devunifacisa@gmail.com</dd>
+        </dl>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/cadastroProdutos.js"></script>
+  <script>
+    function toggleMenu() {
+      var navList = document.getElementById('nav-list');
+      navList.classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>

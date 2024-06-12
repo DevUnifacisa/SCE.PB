@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCE.PB - Suporte</title>
+  <link rel="stylesheet" href="../css/stylesSuporte.css" type="text/css" />
+  <link rel="stylesheet" href="../css/stylesGeral.css" type="text/css" />
+  <link rel="icon" href="../icon/Icon_Logo1.ico" type="image/ico" />
+</head>
+
+<body>
+  <header>
+    <img src="../icon/logo3-removebg-preview.png" alt="Logo Topo" width="10%" />
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li>
+          <a href="#">Cadastro</a>
+          <ul class="submenu">
+            <li><a href="cadastroProdutos.html">Produtos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Estoque</a>
+          <ul class="submenu">
+            <li><a href="entradaProdutos.html">Entrada</a></li>
+            <li><a href="saidaProdutos.html">Saída</a></li>
+            <li><a href="inventario.html">Ajustes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Relatórios</a>
+          <ul class="submenu">
+            <li>
+              <a href="realtorioEntradasGeral.html">Entradas</a>
+            </li>
+            <li>
+              <a href="realtorioSaidasGeral.html">Saídas</a>
+            </li>
+            <li>
+              <a href="relatorioPosicaoGeralEstoque.html">Estoque</a>
+            </li>
+            <li><a href="movimentacao.html">Movimentação</a></li>
+            <li><a href="produtosCadastrados.html">Prod.Cadastrados</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Suporte</a></li>
+        <li><a href="../index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Suporte</h1>
+  <form id="suporte-form" action="https://api.staticforms.xyz/submit" method="post" class="cardContato">
+    <input type="hidden" name="accessKey" value="05fa2a25-558d-488e-a232-db3d002fc1bf" />
+
+    <div class="form-row">
+      <label for="nome">Nome:</label>
+      <input type="text" id="inputNome" name="name" required minlength="2" maxlength="50" />
+    </div>
+    <div class="form-row">
+      <label for="inputEmail">Email:</label>
+      <input type="email" id="inputEmail" name="email" required maxlength="60" />
+
+    </div>
+    <div class="form-row">
+      <label for="textAreaMensagem">Dúvida:</label>
+      <textarea name="message" id="textAreaMensagem" required>
+    </textarea>
+    </div>
+    <button type="submit">Enviar</button>
+    <input type="hidden" name="redirectTo" value="https://sce-pb.netlify.app/html/confirmacaoenvio" />
+  </form>
+
+  <hr />
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-text">
+        <dl>
+          <dd>&copy; 2024 - Todos os direitos reservados</dd>
+          <dd>Entre em contato pelo e-mail: devunifacisa@gmail.com</dd>
+        </dl>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    function enviarMensagem(event) {
+      event.preventDefault(); // Evita que o formulário seja enviado normalmente
+      document.getElementById("suporte-form").style.display = "none"; // Esconde o formulário
+      document.getElementById("mensagem-enviada").style.display = "block"; // Exibe a mensagem de sucesso
+    }
+  </script>
+  <script>
+    function toggleMenu() {
+      var navList = document.getElementById('nav-list');
+      navList.classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCE.PB -Confirmacao de Envio</title>
+  <link rel="icon" href="../icon/Icon_Logo1.ico" type="image/ico" />
+  <style>
+    #mensagem {
+      text-align: center;
+    }
+
+    .button-container {
+      text-align: center;
+      /* Alinha o conteúdo ao centro */
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      padding: 14px 25px;
+      background-color: #000033;
+      color: #fff;
+
+
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000033;
+      color: #fff;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="../icon/logo3-removebg-preview.png" alt="Logo Topo" width="10%" />
+  </header>
+
+
+  <div id="mensagem">
+    <h2>Sua mensagem foi enviada com sucesso!</h2>
+    <h2>Entraremos em contato em breve.</h2>
+  </div>
+  <hr />
+  <!-- Adicionando o botão de voltar dentro de uma div de container -->
+  <div class="button-container">
+    <button onclick="window.location.href = 'home.html'">Voltar</button>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-text">
+        <dl>
+          <dd>&copy; 2024 - Todos os direitos reservados</dd>
+          <dd>Entre em contato pelo e-mail: devunifacisa@gmail.com</dd>
+        </dl>
+      </div>
+    </div>
+    <script>
+      function toggleMenu() {
+        var navList = document.getElementById('nav-list');
+        navList.classList.toggle('show');
+      }
+    </script>
+  </footer>
+</body>
+
+</html>

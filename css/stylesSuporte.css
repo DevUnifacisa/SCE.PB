@@ -1,0 +1,83 @@
+/* stylesSuporte.css */
+
+.header {
+  background-color: #000033;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo-image {
+  width: 10%;
+}
+
+/* Estilos do formulário */
+form {
+  border: 2px solid #ccc;
+  padding: 20px;
+  max-width: 600px;
+  /* Alterado para uma largura máxima mais adequada */
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.form-row {
+  margin-bottom: 15px;
+  /* Aumentado o espaço entre as linhas para melhor legibilidade */
+}
+
+label {
+  display: block;
+  /* Alterado para block para cada rótulo ocupar uma linha inteira */
+  width: 100%;
+  font-weight: normal;
+  text-align: left;
+  /* Alinhado à esquerda para melhor legibilidade */
+  margin-bottom: 5px;
+}
+
+#mensagem-enviada {
+  text-align: center;
+  text-decoration: wavy;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: calc(100% - 20px);
+  /* Ajustado para incluir a margem nos campos de entrada */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  /* Adicionado para incluir a largura do preenchimento e da borda no cálculo da largura total */
+  margin-bottom: 10px;
+  /* Aumentado o espaço entre os campos de entrada */
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 25px;
+  background-color: #000033;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  /* Alterado para block para que o botão ocupe uma linha inteira */
+  width: 100%;
+  /* Ajustado para ocupar toda a largura disponível */
+}
+
+button[type="button"] {
+  background-color: #000033;
+}
+
+h1 {
+  text-align: center;
+}

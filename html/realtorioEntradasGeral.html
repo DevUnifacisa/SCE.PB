@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>SCE.PB - Relatório de Entradas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/stylesGeral.css" type="text/css">
+  <link rel="icon" href="../icon/Icon_Logo1.ico" type="image/ico">
+</head>
+
+<body>
+  <header>
+    <img src="../icon/logo3-removebg-preview.png" alt="Logo Topo" width="10%" />
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li>
+          <a href="#">Cadastro</a>
+          <ul class="submenu">
+            <li><a href="cadastroProdutos.html">Produtos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Estoque</a>
+          <ul class="submenu">
+            <li><a href="entradaProdutos.html">Entrada</a></li>
+            <li><a href="saidaProdutos.html">Saída</a></li>
+            <li><a href="inventario.html">Ajustes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Relatórios</a>
+          <ul class="submenu">
+            <li>
+              <a href="realtorioEntradasGeral.html">Entradas</a>
+            </li>
+            <li>
+              <a href="realtorioSaidasGeral.html">Saídas</a>
+            </li>
+            <li>
+              <a href="relatorioPosicaoGeralEstoque.html">Estoque</a>
+            </li>
+            <li><a href="movimentacao.html">Movimentação</a></li>
+            <li><a href="produtosCadastrados.html">Prod.Cadastrados</a></li>
+          </ul>
+        </li>
+        <li><a href="suporte.html">Suporte</a></li>
+        <li><a href="../index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Relatório de Entradas</h1>
+  <div class="table-container">
+    <table id="tabela-relatorio-entradas">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Valor Unitário</th>
+          <th>Valor Total</th>
+          <th>Nome Fornecedor</th>
+          <th>Data de Entrada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Linhas de entradas serão adicionadas dinamicamente pelo JavaScript -->
+      </tbody>
+    </table>
+  </div>
+  <a id="link-topo" href="#">&#9650;</a>
+  <script src="../js/relatorioEntradasGeral.js"></script>
+  <script>
+    function toggleMenu() {
+      var navList = document.getElementById('nav-list');
+      navList.classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>

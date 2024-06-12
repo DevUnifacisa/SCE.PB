@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>SCE.PB -Ajustes de Estoque</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/stylesInventario.css" type="text/css">
+  <link rel="stylesheet" href="../css/stylesGeral.css" type="text/css">
+  <link rel="icon" href="../icon/Icon_Logo1.ico" type="image/ico">
+</head>
+
+<body>
+  <header>
+    <img src="../icon/logo3-removebg-preview.png" alt="Logo Topo" width="10%" />
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+        <div class="menu-icon-line"></div>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li>
+          <a href="#">Cadastro</a>
+          <ul class="submenu">
+            <li><a href="cadastroProdutos.html">Produtos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Estoque</a>
+          <ul class="submenu">
+            <li><a href="entradaProdutos.html">Entrada</a></li>
+            <li><a href="saidaProdutos.html">Saída</a></li>
+            <li><a href="#">Ajustes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Relatórios</a>
+          <ul class="submenu">
+            <li>
+              <a href="realtorioEntradasGeral.html">Entradas</a>
+            </li>
+            <li>
+              <a href="realtorioSaidasGeral.html">Saídas</a>
+            </li>
+            <li>
+              <a href="relatorioPosicaoGeralEstoque.html">Estoque</a>
+            </li>
+            <li><a href="movimentacao.html">Movimentação</a></li>
+            <li><a href="produtosCadastrados.html">Prod.Cadastrados</a></li>
+          </ul>
+        </li>
+        <li><a href="suporte.html">Suporte</a></li>
+        <li><a href="../index.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Ajustes de Estoque</h1>
+    <form id="form-inventario">
+      <div class="form-row">
+        <label for="codigo-produto">Código do Produto:</label>
+        <input list="codigo-produto-list" id="codigo-produto" name="codigo-produto" required>
+        <datalist id="codigo-produto-list">
+          <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
+        </datalist>
+      </div>
+      <div class="form-row">
+        <label for="descricao-produto">Descrição do Produto:</label>
+        <input type="text" id="descricao-produto" name="descricao-produto" required readonly>
+      </div>
+      <div class="form-row">
+        <label for="alocacao">Alocação:</label>
+        <input type="text" id="alocacao" name="alocacao" required readonly>
+      </div>
+      <div class="form-row">
+        <label for="estoque-atual">Estoque Atual:</label>
+        <input type="text" id="estoque-atual" name="estoque-atual" required readonly>
+      </div>
+      <div class="form-row">
+        <label for="contagem">Contagem:</label>
+        <input type="number" id="contagem" name="contagem" required>
+      </div>
+      <div class="form-row">
+        <label for="data-inventario">Data do Inventário:</label>
+        <input type="date" id="data-inventario" name="data-inventario" value="<?php echo date('Y-m-d'); ?>" readonly>
+      </div>
+      <button type="submit">Atualizar Estoque</button>
+    </form>
+    <a id="link-topo" href="#">&#9650;</a>
+  </main>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-text">
+        <dl>
+          <dd>&copy; 2024 - Todos os direitos reservados</dd>
+          <dd>Entre em contato pelo e-mail: devunifacisa@gmail.com</dd>
+        </dl>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/inventario.js"></script>
+  <script>
+    function toggleMenu() {
+      var navList = document.getElementById('nav-list');
+      navList.classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>
