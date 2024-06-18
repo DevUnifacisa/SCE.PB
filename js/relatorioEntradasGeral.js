@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("tabela-relatorio-entradas")
     .getElementsByTagName("tbody")[0];
 
-  // Supondo que você tenha as entradas armazenadas em localStorage
   let entradas = JSON.parse(localStorage.getItem("entradas")) || [];
 
   // Função para formatar a data no formato brasileiro

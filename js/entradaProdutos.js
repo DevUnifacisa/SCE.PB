@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   valorUnitarioInput.addEventListener("input", calcularValorTotal);
   quantidadeInput.addEventListener("input", calcularValorTotal);
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const fornecedor = document.getElementById("fornecedor").value;
@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       return;
     }
+
+    // Simulação de operação assíncrona (espera 8 segundo)
+    await new Promise((resolve) => setTimeout(resolve, 8000));
 
     // Recuperar o estoque atual do localStorage
     let estoque = JSON.parse(localStorage.getItem("estoque")) || [];
