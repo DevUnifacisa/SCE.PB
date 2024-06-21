@@ -112,7 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-// Função para calcular estoque atualizado com base nas movimentações
+// Função para calcular estoque atualizado com base nas movimentações 
+//  essa parte esta comentada pois esta fazendo essa função atraves do import no inicio
 /*function calcularEstoqueAtualizado(codigoProduto, movimentacoes) {
   let quantidade = 0;
   let valorTotal = 0;
