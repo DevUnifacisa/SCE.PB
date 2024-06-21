@@ -1,5 +1,4 @@
-// Função para calcular estoque atualizado com base nas movimentações
-function calcularEstoqueAtualizado(codigoProduto, movimentacoes) {
+export function calcularEstoqueAtualizado(codigoProduto, movimentacoes) {
   let quantidade = 0;
   let valorTotal = 0;
 
@@ -17,4 +16,4 @@ function calcularEstoqueAtualizado(codigoProduto, movimentacoes) {
 }
 
 // Exportar a função para testes
-module.exports = calcularEstoqueAtualizado;
+//module.exports = calcularEstoqueAtualizado;

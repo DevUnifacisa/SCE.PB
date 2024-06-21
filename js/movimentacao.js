@@ -1,9 +1,12 @@
+import { calcularEstoqueAtualizado } from './calculoEstoque.js';
+
 document.addEventListener("DOMContentLoaded", function () {
   const codigoProdutoInput = document.getElementById("codigo-produto");
   const nomeProdutoInput = document.getElementById("nome-produto");
 
   // Recuperar os produtos cadastrados do localStorage
   let produtosCadastrados = JSON.parse(localStorage.getItem("produtos")) || [];
+
 
   // Preencher a datalist com os produtos cadastrados
   const dataList = document.getElementById("codigo-produto-list");
@@ -12,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     option.value = produto.codigoProduto;
     dataList.appendChild(option);
   });
+
 
   // Evento para preencher o nome do produto ao selecionar um código de produto
   codigoProdutoInput.addEventListener("input", function () {
@@ -25,71 +29,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
   // Evento para buscar as movimentações e calcular o estoque atualizado ao submeter o formulário
-  document
-    .getElementById("form-movimentacao")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
+  document.getElementById("form-movimentacao").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      const codigoProduto = codigoProdutoInput.value;
+    const codigoProduto = codigoProdutoInput.value;
 
-      // Buscar as movimentações do produto com o código fornecido
-      const movimentacoes = buscarMovimentacoes(codigoProduto);
+    // Buscar as movimentações do produto com o código fornecido
+    const movimentacoes = buscarMovimentacoes(codigoProduto);
 
-      const movimentacoesDiv = document.getElementById("movimentacoes");
-      movimentacoesDiv.innerHTML = "";
+    const movimentacoesDiv = document.getElementById("movimentacoes");
+    movimentacoesDiv.innerHTML = "";
 
-      if (movimentacoes.length === 0) {
-        movimentacoesDiv.innerHTML =
-          "<p>Nenhuma movimentação encontrada para este produto.</p>";
-      } else {
-        const table = document.createElement("table");
-        const headerRow = table.createTHead().insertRow();
-        ["Data", "Tipo", "Quantidade", "Valor Unitário", "Valor Total"].forEach(
-          (headerText) => {
-            const th = document.createElement("th");
-            th.textContent = headerText;
-            headerRow.appendChild(th);
+    if (movimentacoes.length === 0) {
+      movimentacoesDiv.innerHTML = "<p>Nenhuma movimentação encontrada para este produto.</p>";
+    } else {
+      const table = document.createElement("table");
+      const headerRow = table.createTHead().insertRow();
+      ["Data", "Tipo", "Quantidade", "Valor Unitário", "Valor Total"].forEach((headerText) => {
+        const th = document.createElement("th");
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+      });
+
+      const tbody = table.createTBody();
+      movimentacoes.forEach((movimentacao) => {
+        const row = tbody.insertRow();
+        ["data", "tipo", "quantidade", "valorUnitario", "valorTotal"].forEach((key) => {
+          const cell = row.insertCell();
+          if (key === "valorUnitario" || key === "valorTotal") {
+            cell.textContent = parseFloat(movimentacao[key]).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+          } else if (key === "data") {
+            cell.textContent = formatarData(movimentacao[key]);
+          } else {
+            cell.textContent = movimentacao[key];
           }
-        );
-
-        const tbody = table.createTBody();
-        movimentacoes.forEach((movimentacao) => {
-          const row = tbody.insertRow();
-          ["data", "tipo", "quantidade", "valorUnitario", "valorTotal"].forEach(
-            (key) => {
-              const cell = row.insertCell();
-              if (key === "valorUnitario" || key === "valorTotal") {
-                cell.textContent = parseFloat(movimentacao[key]).toLocaleString(
-                  "pt-BR",
-                  { style: "currency", currency: "BRL" }
-                );
-              } else if (key === "data") {
-                cell.textContent = formatarData(movimentacao[key]);
-              } else {
-                cell.textContent = movimentacao[key];
-              }
-            }
-          );
         });
+      });
 
-        movimentacoesDiv.appendChild(table);
-      }
+      movimentacoesDiv.appendChild(table);
+    }
 
-      // Buscar e exibir o estoque atualizado do produto
-      const estoque = calcularEstoqueAtualizado(codigoProduto, movimentacoes);
-      const estoqueQuantidade = document.getElementById("estoque-quantidade");
-      const estoqueValor = document.getElementById("estoque-valor");
+    // Buscar e exibir o estoque atualizado do produto
+    const estoque = calcularEstoqueAtualizado(codigoProduto, movimentacoes);
+    const estoqueQuantidade = document.getElementById("estoque-quantidade");
+    const estoqueValor = document.getElementById("estoque-valor");
 
-      estoqueQuantidade.textContent =
-        "Quantidade: " + estoque.quantidade.toLocaleString("pt-BR");
-      estoqueValor.textContent =
-        "Valor: " +
-        estoque.valor.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        });
-    });
+    estoqueQuantidade.textContent = "Quantidade: " + estoque.quantidade.toLocaleString("pt-BR");
+    estoqueValor.textContent = "Valor: " + estoque.valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  });
 
   // Função para buscar movimentações do produto (entrada e saída)
   function buscarMovimentacoes(codigoProduto) {
@@ -118,29 +107,33 @@ document.addEventListener("DOMContentLoaded", function () {
         valorTotal: mov.valorTotal,
       }));
 
+    // Combinar movimentações de entrada e saída
     return [...movimentacoesEntrada, ...movimentacoesSaida];
   }
 
-  // Função para calcular estoque atualizado com base nas movimentações
-  function calcularEstoqueAtualizado(codigoProduto, movimentacoes) {
-    let quantidade = 0;
-    let valorTotal = 0;
 
-    movimentacoes.forEach((mov) => {
-      if (mov.tipo === "Entrada") {
-        quantidade += mov.quantidade;
-        valorTotal += mov.valorTotal;
-      } else if (mov.tipo === "Saída") {
-        quantidade -= mov.quantidade;
-        valorTotal -= mov.valorTotal;
-      }
-    });
+// Função para calcular estoque atualizado com base nas movimentações
+/*function calcularEstoqueAtualizado(codigoProduto, movimentacoes) {
+  let quantidade = 0;
+  let valorTotal = 0;
 
-    return { quantidade, valor: valorTotal };
-  }
+  movimentacoes.forEach((mov) => {
+    if (mov.tipo === "Entrada") {
+      quantidade += mov.quantidade;
+      valorTotal += mov.valorTotal;
+    } else if (mov.tipo === "Saída") {
+      quantidade -= mov.quantidade;
+      valorTotal -= mov.valorTotal;
+    }
+  });
 
-  // Função para formatar a data no formato brasileiro
+  return { quantidade, valor: valorTotal };
+}*/
+
+
+  // Função para formatar a data no formato "dd/mm/yyyy"
   function formatarData(data) {
-    return new Date(data).toLocaleDateString("pt-BR");
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
   }
 });
